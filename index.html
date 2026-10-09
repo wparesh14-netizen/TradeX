@@ -17,7 +17,9 @@ body {
     color: white;
 }
 
-button, input, select {
+button,
+input,
+select {
     font: inherit;
 }
 
@@ -30,7 +32,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg,#07111f,#111827);
+    background: linear-gradient(135deg, #07111f, #111827);
 }
 
 .login-box {
@@ -137,10 +139,6 @@ header {
     display: block;
 }
 
-h1 {
-    margin-top: 0;
-}
-
 .card {
     background: #111827;
     border: 1px solid #263244;
@@ -151,7 +149,7 @@ h1 {
 
 .stat-grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
 
@@ -198,7 +196,7 @@ h1 {
 
 .bar {
     width: 48px;
-    background: linear-gradient(to top,#00a85a,#00ff88);
+    background: linear-gradient(to top, #00a85a, #00ff88);
     border-radius: 7px 7px 0 0;
     min-height: 10px;
     transition: height .5s;
@@ -219,7 +217,7 @@ h1 {
 
 .creator-grid {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 15px;
 }
 
@@ -275,7 +273,6 @@ h1 {
     padding: 10px;
     margin-bottom: 9px;
     border-radius: 9px;
-    position: relative;
 }
 
 .message small {
@@ -302,7 +299,8 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
     padding: 12px;
     border-bottom: 1px solid #263244;
     text-align: left;
@@ -321,9 +319,21 @@ th {
     color: #fb7185;
 }
 
+.success {
+    color: #00ff88;
+}
+
+.owner-user {
+    padding: 10px;
+    margin-top: 8px;
+    background: #020617;
+    border-radius: 8px;
+    border: 1px solid #263244;
+}
+
 @media(max-width:900px) {
     .creator-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .stat-grid {
@@ -365,31 +375,53 @@ th {
 
 <!-- LOGIN -->
 <div class="login" id="login">
+
     <div class="login-box">
+
         <div class="logo">TradeX</div>
+
         <p>Creator Trading Platform</p>
 
-        <input id="email" type="email" placeholder="Enter your email">
+        <input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+        >
 
         <button class="google" onclick="login()">
             🔵 Sign in with Google
         </button>
 
         <p id="loginError" class="danger"></p>
+
     </div>
+
 </div>
 
 
-<!-- APP -->
+<!-- APPLICATION -->
 <div id="app">
 
 <header>
-    <div class="header-logo">TradeX</div>
-    <div>
-        <span id="cashDisplay" class="cash">₹50</span>
-        &nbsp; | &nbsp;
-        <span>🪙 <span id="xcoinDisplay">10</span> Xcoins</span>
+
+    <div class="header-logo">
+        TradeX
     </div>
+
+    <div>
+
+        <span id="cashDisplay" class="cash">
+            ₹50
+        </span>
+
+        &nbsp; | &nbsp;
+
+        <span>
+            🪙 <span id="xcoinDisplay">10</span> Xcoins
+        </span>
+
+    </div>
+
 </header>
 
 
@@ -397,22 +429,50 @@ th {
 
 <aside class="sidebar">
 
-<button class="nav active" onclick="showPage('home',this)">🏠 Home</button>
-<button class="nav" onclick="showPage('markets',this)">📊 Creator Markets</button>
-<button class="nav" onclick="showPage('portfolio',this)">💼 Portfolio</button>
-<button class="nav" onclick="showPage('orders',this)">📋 Orders</button>
-<button class="nav" onclick="showPage('xcoins',this)">🪙 Get Xcoins</button>
-<button class="nav" onclick="showPage('chat',this)">💬 Online Chat</button>
-<button class="nav" onclick="showPage('account',this)">👤 Account</button>
-<button class="nav" onclick="showPage('owner',this)">👑 Owner</button>
-<button class="nav" onclick="logout()">🚪 Logout</button>
+<button class="nav active" onclick="showPage('home',this)">
+    🏠 Home
+</button>
+
+<button class="nav" onclick="showPage('markets',this)">
+    📊 Creator Markets
+</button>
+
+<button class="nav" onclick="showPage('portfolio',this)">
+    💼 Portfolio
+</button>
+
+<button class="nav" onclick="showPage('orders',this)">
+    📋 Orders
+</button>
+
+<button class="nav" onclick="showPage('xcoins',this)">
+    🪙 Get Xcoins
+</button>
+
+<button class="nav" onclick="showPage('chat',this)">
+    💬 Online Chat
+</button>
+
+<button class="nav" onclick="showPage('account',this)">
+    👤 Account
+</button>
+
+<button class="nav" onclick="showPage('owner',this)">
+    👑 Owner
+</button>
+
+<button class="nav" onclick="logout()">
+    🚪 Logout
+</button>
 
 </aside>
 
 
 <main class="content">
 
+
 <!-- HOME -->
+
 <section id="home" class="page active">
 
 <h1>Welcome to TradeX 🚀</h1>
@@ -420,126 +480,243 @@ th {
 <div class="stat-grid">
 
 <div class="stat">
+
 <div>Available Paper Cash</div>
-<div class="stat-value" id="homeCash">₹50</div>
+
+<div
+    class="stat-value"
+    id="homeCash"
+>
+₹50
 </div>
 
+</div>
+
+
 <div class="stat">
+
 <div>Xcoins</div>
-<div class="stat-value" id="homeXcoins">10</div>
+
+<div
+    class="stat-value"
+    id="homeXcoins"
+>
+10
 </div>
+
+</div>
+
 
 <div class="stat">
+
 <div>Account</div>
-<div class="stat-value" style="font-size:18px" id="homeEmail">---</div>
+
+<div
+    class="stat-value"
+    style="font-size:18px"
+    id="homeEmail"
+>
+---
 </div>
 
 </div>
+
+</div>
+
 
 <div class="card">
+
 <h2>📈 TradeX Creator Market</h2>
-<p>Track creator activity and demo market scores.</p>
-<button class="action" onclick="showPage('markets')">Open Markets</button>
+
+<p>
+Track creator activity and demo market scores.
+</p>
+
+<button
+    class="action"
+    onclick="showPage('markets')"
+>
+Open Markets
+</button>
+
 </div>
 
 </section>
 
 
 <!-- MARKETS -->
+
 <section id="markets" class="page">
 
 <h1>📊 Creator Markets</h1>
 
-<select class="market-select" id="language" onchange="loadMarket()">
-<option value="english">English YT</option>
-<option value="hindi">Hindi YT</option>
-<option value="korean">Korean YT</option>
-<option value="nepali">Nepali YT</option>
+<select
+    class="market-select"
+    id="language"
+    onchange="loadMarket()"
+>
+
+<option value="english">
+English YT
+</option>
+
+<option value="hindi">
+Hindi YT
+</option>
+
+<option value="korean">
+Korean YT
+</option>
+
+<option value="nepali">
+Nepali YT
+</option>
+
 </select>
 
 <br><br>
 
+
 <div class="card">
+
 <h2>Creator Activity Bar Graph</h2>
-<div class="chart" id="chart"></div>
+
+<div
+    class="chart"
+    id="chart"
+></div>
+
 </div>
 
-<div class="creator-grid" id="creators"></div>
+
+<div
+    class="creator-grid"
+    id="creators"
+></div>
 
 </section>
 
 
 <!-- PORTFOLIO -->
+
 <section id="portfolio" class="page">
 
 <h1>💼 Portfolio</h1>
 
 <div class="card">
+
 <h2>Paper Trading Portfolio</h2>
-<p>Cash Balance: <strong id="portfolioCash">₹50</strong></p>
-<p>Total Portfolio Value: <strong id="portfolioValue">₹50</strong></p>
-<p>Profit/Loss: <strong>₹0</strong></p>
+
+<p>
+Cash Balance:
+<strong id="portfolioCash">
+₹50
+</strong>
+</p>
+
+<p>
+Total Portfolio Value:
+<strong id="portfolioValue">
+₹50
+</strong>
+</p>
+
+<p>
+Profit/Loss:
+<strong>₹0</strong>
+</p>
+
 </div>
 
 </section>
 
 
 <!-- ORDERS -->
+
 <section id="orders" class="page">
 
 <h1>📋 Orders</h1>
 
 <div class="card">
+
 <table>
+
 <thead>
+
 <tr>
 <th>Creator</th>
 <th>Action</th>
 <th>Amount</th>
 <th>Status</th>
 </tr>
+
 </thead>
 
 <tbody id="ordersTable">
+
 <tr>
-<td colspan="4">No orders yet.</td>
+<td colspan="4">
+No orders yet.
+</td>
 </tr>
+
 </tbody>
 
 </table>
+
 </div>
 
 </section>
 
 
 <!-- XCOINS -->
+
 <section id="xcoins" class="page">
 
 <h1>🪙 Get Xcoins</h1>
 
-<div class="card survey">
-<h2>Survey 1</h2>
-<p>Type <b>demongod</b> 5 times.</p>
 
-<input id="survey1Input" placeholder="Enter answer">
+<div class="card survey">
+
+<h2>Survey 1</h2>
+
+<p>
+Type <b>demongod</b> 5 times.
+</p>
+
+<input
+    id="survey1Input"
+    placeholder="Enter answer"
+>
 
 <br><br>
 
-<button onclick="survey1()">Complete Survey</button>
+<button onclick="survey1()">
+Complete Survey
+</button>
 
 <p id="survey1Status"></p>
+
 </div>
 
 
 <div class="card survey">
+
 <h2>Survey 2 — ONGOING</h2>
-<p>This survey is currently ongoing.</p>
 
-<button disabled>Ongoing</button>
+<p>
+This survey is currently ongoing.
+</p>
+
+<button disabled>
+Ongoing
+</button>
+
 </div>
 
 
 <div class="card survey">
+
 <h2>Survey 3</h2>
 
 <p>
@@ -552,26 +729,45 @@ Comment:
 <b>xtrade mbs</b>
 </p>
 
-<button onclick="survey3()">Claim +4 Xcoins</button>
+<button onclick="survey3()">
+Claim +4 Xcoins
+</button>
 
 <p id="survey3Status"></p>
+
 </div>
 
 </section>
 
 
 <!-- CHAT -->
+
 <section id="chat" class="page">
 
 <h1>💬 TradeX Online Chat</h1>
 
 <div class="card">
 
-<div id="chatBox" class="chat-box"></div>
+<div
+    id="chatBox"
+    class="chat-box"
+></div>
 
 <div class="chat-input">
-<input id="chatInput" maxlength="250" placeholder="Write a message...">
-<button class="action" onclick="sendMessage()">Send</button>
+
+<input
+    id="chatInput"
+    maxlength="250"
+    placeholder="Write a message..."
+>
+
+<button
+    class="action"
+    onclick="sendMessage()"
+>
+Send
+</button>
+
 </div>
 
 <p style="color:#94a3b8">
@@ -584,6 +780,7 @@ Messages automatically disappear after 12 minutes unless pinned.
 
 
 <!-- ACCOUNT -->
+
 <section id="account" class="page">
 
 <h1>👤 Account</h1>
@@ -591,14 +788,26 @@ Messages automatically disappear after 12 minutes unless pinned.
 <div class="card">
 
 <p>Email:</p>
+
 <h3 id="accountEmail"></h3>
 
-<p>Sign-in method: Google</p>
+<p>
+Sign-in method: Google
+</p>
 
-<p>TradeX Pass:</p>
-<div class="pass" id="tradePass"></div>
+<p>
+TradeX Pass:
+</p>
 
-<p>Xcoins: <strong id="accountXcoins"></strong></p>
+<div
+    class="pass"
+    id="tradePass"
+></div>
+
+<p>
+Xcoins:
+<strong id="accountXcoins"></strong>
+</p>
 
 </div>
 
@@ -606,38 +815,64 @@ Messages automatically disappear after 12 minutes unless pinned.
 
 
 <!-- OWNER -->
+
 <section id="owner" class="page">
 
 <h1>👑 Owner Panel</h1>
+
 
 <div class="card owner">
 
 <h2>Owner Verification</h2>
 
-<p>Enter owner invitation code:</p>
+<p>
+Enter owner invitation code:
+</p>
 
-<input id="ownerCode" placeholder="Owner code">
+<input
+    id="ownerCode"
+    placeholder="Owner code"
+>
 
 <br><br>
 
-<button class="action" onclick="verifyOwner()">Verify Owner</button>
+<button
+    class="action"
+    onclick="verifyOwner()"
+>
+Verify Owner
+</button>
 
 <p id="ownerStatus"></p>
 
 </div>
 
 
-<div id="ownerTools" style="display:none">
+<div
+    id="ownerTools"
+    style="display:none"
+>
+
 
 <div class="card owner">
 
 <h2>👑 Owner Controls</h2>
 
-<p>Owner paper cash:</p>
-<h2>₹10,000,000</h2>
+<p>
+Owner paper cash:
+</p>
 
-<p>Owner TradeX Pass:</p>
-<h3 class="pass">VIP O.W.N</h3>
+<h2>
+₹10,000,000
+</h2>
+
+<p>
+Owner TradeX Pass:
+</p>
+
+<h3 class="pass">
+VIP O.W.N
+</h3>
 
 </div>
 
@@ -646,17 +881,35 @@ Messages automatically disappear after 12 minutes unless pinned.
 
 <h2>Manage User Xcoins</h2>
 
-<input id="manageEmail" placeholder="User email">
+<input
+    id="manageEmail"
+    placeholder="User email"
+>
 
 <br><br>
 
-<input id="coinAmount" type="number" placeholder="Xcoin amount">
+<input
+    id="coinAmount"
+    type="number"
+    min="1"
+    placeholder="Xcoin amount"
+>
 
 <br><br>
 
-<button class="action" onclick="addCoins()">Add Xcoins</button>
+<button
+    class="action"
+    onclick="addCoins()"
+>
+Add Xcoins
+</button>
 
-<button class="action" onclick="removeCoins()">Remove Xcoins</button>
+<button
+    class="action"
+    onclick="removeCoins()"
+>
+Remove Xcoins
+</button>
 
 <p id="coinStatus"></p>
 
@@ -665,9 +918,11 @@ Messages automatically disappear after 12 minutes unless pinned.
 
 <div class="card owner">
 
-<h2>Registered Account</h2>
+<h2>Registered Accounts</h2>
 
-<p id="registeredAccount"></p>
+<div id="registeredAccounts">
+No registered accounts.
+</div>
 
 </div>
 
@@ -675,209 +930,532 @@ Messages automatically disappear after 12 minutes unless pinned.
 
 </section>
 
+
 </main>
+
 </div>
+
 </div>
 
 
 <script>
 
+/* =========================
+   BASIC SETTINGS
+========================= */
+
 const OWNER_CODE = "5.0.32v";
 
 let currentEmail = "";
+
 let xcoins = 10;
+
 let cash = 50;
+
 let isOwner = false;
 
 
-/* CREATOR MARKET DATA */
+/* =========================
+   CREATOR MARKETS
+========================= */
 
 const markets = {
 
 english: [
-{name:"MrBeast",score:96,subs:"450M+",views:"100B+",videos:"900+",trend:"Very High"},
-{name:"KSI",score:84,subs:"25M+",views:"6B+",videos:"1,000+",trend:"High"},
-{name:"PewDiePie",score:68,subs:"110M+",views:"29B+",videos:"4,700+",trend:"Stable"},
-{name:"Mark Rober",score:77,subs:"70M+",views:"15B+",videos:"200+",trend:"Rising"}
+
+{
+name:"MrBeast",
+score:96,
+subs:"450M+",
+views:"100B+",
+videos:"900+",
+trend:"Very High"
+},
+
+{
+name:"KSI",
+score:84,
+subs:"25M+",
+views:"6B+",
+videos:"1,000+",
+trend:"High"
+},
+
+{
+name:"PewDiePie",
+score:68,
+subs:"110M+",
+views:"29B+",
+videos:"4,700+",
+trend:"Stable"
+},
+
+{
+name:"Mark Rober",
+score:77,
+subs:"70M+",
+views:"15B+",
+videos:"200+",
+trend:"Rising"
+}
+
 ],
+
 
 hindi: [
-{name:"Demon God Gamerz",score:99,subs:"1 Crore+",views:"2B+",videos:"10",trend:"Explosive"},
-{name:"Techno Gamerz",score:91,subs:"50M+",views:"15B+",videos:"1,000+",trend:"Very High"},
-{name:"CarryMinati",score:86,subs:"45M+",views:"4B+",videos:"200+",trend:"High"},
-{name:"Senpai Spider",score:69,subs:"2M+",views:"500M+",videos:"70+",trend:"Rising"}
+
+{
+name:"Demon God Gamerz",
+score:99,
+subs:"1 Crore+",
+views:"2B+",
+videos:"10",
+trend:"Explosive"
+},
+
+{
+name:"Techno Gamerz",
+score:91,
+subs:"50M+",
+views:"15B+",
+videos:"1,000+",
+trend:"Very High"
+},
+
+{
+name:"CarryMinati",
+score:86,
+subs:"45M+",
+views:"4B+",
+videos:"200+",
+trend:"High"
+},
+
+{
+name:"Senpai Spider",
+score:69,
+subs:"2M+",
+views:"500M+",
+videos:"70+",
+trend:"Rising"
+}
+
 ],
+
 
 korean: [
-{name:"KIMPRO",score:94,subs:"40M+",views:"30B+",videos:"1,000+",trend:"Very High"},
-{name:"BTS",score:92,subs:"80M+",views:"25B+",videos:"500+",trend:"Very High"},
-{name:"BLACKPINK",score:88,subs:"90M+",views:"30B+",videos:"500+",trend:"High"},
-{name:"IU",score:70,subs:"10M+",views:"1B+",videos:"200+",trend:"Stable"}
+
+{
+name:"KIMPRO",
+score:94,
+subs:"40M+",
+views:"30B+",
+videos:"1,000+",
+trend:"Very High"
+},
+
+{
+name:"BTS",
+score:92,
+subs:"80M+",
+views:"25B+",
+videos:"500+",
+trend:"Very High"
+},
+
+{
+name:"BLACKPINK",
+score:88,
+subs:"90M+",
+views:"30B+",
+videos:"500+",
+trend:"High"
+},
+
+{
+name:"IU",
+score:70,
+subs:"10M+",
+views:"1B+",
+videos:"200+",
+trend:"Stable"
+}
+
 ],
 
+
 nepali: [
-{name:"VTEN",score:81,subs:"2M+",views:"300M+",videos:"200+",trend:"Rising"},
-{name:"Sushant KC",score:70,subs:"1M+",views:"100M+",videos:"100+",trend:"Stable"},
-{name:"Nepali Creator 3",score:63,subs:"Demo",views:"Demo",videos:"Demo",trend:"Stable"},
-{name:"Nepali Creator 4",score:55,subs:"Demo",views:"Demo",videos:"Demo",trend:"Low"}
+
+{
+name:"VTEN",
+score:81,
+subs:"2M+",
+views:"300M+",
+videos:"200+",
+trend:"Rising"
+},
+
+{
+name:"Sushant KC",
+score:70,
+subs:"1M+",
+views:"100M+",
+videos:"100+",
+trend:"Stable"
+},
+
+{
+name:"Nepali Creator 3",
+score:63,
+subs:"Demo",
+views:"Demo",
+videos:"Demo",
+trend:"Stable"
+},
+
+{
+name:"Nepali Creator 4",
+score:55,
+subs:"Demo",
+views:"Demo",
+videos:"Demo",
+trend:"Low"
+}
+
 ]
 
 };
 
 
-/* LOGIN */
+/* =========================
+   LOGIN
+========================= */
 
 function login() {
 
-let email = document.getElementById("email").value.trim();
+let email =
+document.getElementById("email").value.trim();
+
 
 if(!email || !email.includes("@")) {
-    document.getElementById("loginError").innerText =
-    "Please enter a valid email.";
-    return;
+
+document.getElementById("loginError").innerText =
+"Please enter a valid email.";
+
+return;
+
 }
+
 
 currentEmail = email;
 
-let saved = localStorage.getItem("TradeXUser_" + email);
+
+let saved =
+localStorage.getItem(
+"TradeXUser_" + email
+);
+
 
 if(saved) {
 
-    let data = JSON.parse(saved);
+let data = JSON.parse(saved);
 
-    xcoins = data.xcoins ?? 10;
-    cash = data.cash ?? 50;
+xcoins =
+Number(data.xcoins ?? 10);
 
-} else {
+cash =
+Number(data.cash ?? 50);
 
-    xcoins = 10;
-    cash = 50;
-
-    saveUserData();
 }
 
-document.getElementById("login").style.display = "none";
-document.getElementById("app").style.display = "block";
+else {
 
-document.getElementById("homeEmail").innerText = email;
-document.getElementById("accountEmail").innerText = email;
+xcoins = 10;
 
-let pass = localStorage.getItem("TradeXPass_" + email);
+cash = 50;
+
+saveUserData();
+
+}
+
+
+/* OWNER ACCOUNT */
+
+let ownerSaved =
+localStorage.getItem(
+"TradeXOwner_" + email
+);
+
+
+if(ownerSaved === "true") {
+
+isOwner = true;
+
+}
+
+else {
+
+isOwner = false;
+
+}
+
+
+document.getElementById("login").style.display =
+"none";
+
+document.getElementById("app").style.display =
+"block";
+
+
+document.getElementById("homeEmail").innerText =
+email;
+
+document.getElementById("accountEmail").innerText =
+email;
+
+
+/* TRADEX PASS */
+
+let pass =
+localStorage.getItem(
+"TradeXPass_" + email
+);
+
 
 if(!pass) {
-    pass = "TX-" + Math.random().toString(36).substring(2,10).toUpperCase();
-    localStorage.setItem("TradeXPass_" + email, pass);
-}
 
-document.getElementById("tradePass").innerText = pass;
-
-updateUI();
-loadMarket();
-loadChat();
-
-}
-
-
-/* SAVE */
-
-function saveUserData() {
-
-if(!currentEmail) return;
+pass =
+"TX-" +
+Math.random()
+.toString(36)
+.substring(2,10)
+.toUpperCase();
 
 localStorage.setItem(
-    "TradeXUser_" + currentEmail,
-    JSON.stringify({
-        xcoins:xcoins,
-        cash:cash
-    })
+"TradeXPass_" + email,
+pass
 );
 
 }
 
 
-/* UI */
+document.getElementById("tradePass").innerText =
+isOwner ? "VIP O.W.N" : pass;
+
+
+/* OWNER TOOLS */
+
+if(isOwner) {
+
+document.getElementById("ownerTools").style.display =
+"block";
+
+}
+
+
+updateUI();
+
+loadMarket();
+
+loadChat();
+
+}
+
+
+/* =========================
+   SAVE USER
+========================= */
+
+function saveUserData() {
+
+if(!currentEmail) return;
+
+
+localStorage.setItem(
+
+"TradeXUser_" + currentEmail,
+
+JSON.stringify({
+
+xcoins:xcoins,
+
+cash:cash
+
+})
+
+);
+
+}
+
+
+/* =========================
+   UPDATE UI
+========================= */
 
 function updateUI() {
 
 document.getElementById("cashDisplay").innerText =
 "₹" + cash.toLocaleString("en-IN");
 
-document.getElementById("xcoinDisplay").innerText = xcoins;
+
+document.getElementById("xcoinDisplay").innerText =
+xcoins;
+
 
 document.getElementById("homeCash").innerText =
 "₹" + cash.toLocaleString("en-IN");
 
-document.getElementById("homeXcoins").innerText = xcoins;
+
+document.getElementById("homeXcoins").innerText =
+xcoins;
+
 
 document.getElementById("portfolioCash").innerText =
 "₹" + cash.toLocaleString("en-IN");
 
+
 document.getElementById("portfolioValue").innerText =
 "₹" + cash.toLocaleString("en-IN");
 
-document.getElementById("accountXcoins").innerText = xcoins;
+
+document.getElementById("accountXcoins").innerText =
+xcoins;
 
 }
 
 
-/* PAGE NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 function showPage(page, button) {
 
-document.querySelectorAll(".page").forEach(p =>
-    p.classList.remove("active")
+document
+.querySelectorAll(".page")
+.forEach(p =>
+p.classList.remove("active")
 );
 
-document.getElementById(page).classList.add("active");
 
-document.querySelectorAll(".nav").forEach(n =>
-    n.classList.remove("active")
+document
+.getElementById(page)
+.classList.add("active");
+
+
+document
+.querySelectorAll(".nav")
+.forEach(n =>
+n.classList.remove("active")
 );
 
-if(button) button.classList.add("active");
+
+if(button) {
+
+button.classList.add("active");
+
+}
 
 }
 
 
-/* MARKETS */
+/* =========================
+   MARKETS
+========================= */
 
 function loadMarket() {
 
-let language = document.getElementById("language").value;
+let language =
+document.getElementById("language").value;
 
-let data = markets[language];
 
-let chart = document.getElementById("chart");
-let creators = document.getElementById("creators");
+let data =
+markets[language];
+
+
+let chart =
+document.getElementById("chart");
+
+
+let creators =
+document.getElementById("creators");
+
 
 chart.innerHTML = "";
+
 creators.innerHTML = "";
+
 
 data.forEach(c => {
 
-let barWrap = document.createElement("div");
-barWrap.className = "bar-wrap";
+
+let barWrap =
+document.createElement("div");
+
+barWrap.className =
+"bar-wrap";
+
 
 barWrap.innerHTML = `
-<div class="bar-score">${c.score}</div>
-<div class="bar" style="height:${c.score * 2.6}px"></div>
-<div class="bar-name">${c.name}</div>
+
+<div class="bar-score">
+${c.score}
+</div>
+
+<div
+class="bar"
+style="height:${c.score * 2.6}px">
+</div>
+
+<div class="bar-name">
+${escapeHTML(c.name)}
+</div>
+
 `;
+
 
 chart.appendChild(barWrap);
 
 
-let card = document.createElement("div");
-card.className = "creator";
+let card =
+document.createElement("div");
+
+card.className =
+"creator";
+
 
 card.innerHTML = `
-<h3>${c.name}</h3>
-<p>📈 Market Score: <b>${c.score}</b></p>
-<p>👥 Subscribers: ${c.subs}</p>
-<p>👁️ Views: ${c.views}</p>
-<p>🎬 Videos: ${c.videos}</p>
-<p class="trend">Trend: ${c.trend}</p>
+
+<h3>
+${escapeHTML(c.name)}
+</h3>
+
+<p>
+📈 Market Score:
+<b>${c.score}</b>
+</p>
+
+<p>
+👥 Subscribers:
+${escapeHTML(c.subs)}
+</p>
+
+<p>
+👁️ Views:
+${escapeHTML(c.views)}
+</p>
+
+<p>
+🎬 Videos:
+${escapeHTML(c.videos)}
+</p>
+
+<p class="trend">
+Trend:
+${escapeHTML(c.trend)}
+</p>
+
 `;
+
 
 creators.appendChild(card);
 
@@ -886,242 +1464,531 @@ creators.appendChild(card);
 }
 
 
-/* SURVEY 1 */
+/* =========================
+   SURVEY 1
+========================= */
 
 function survey1() {
 
-let input = document.getElementById("survey1Input").value.trim();
+let input =
+document
+.getElementById("survey1Input")
+.value
+.trim();
+
 
 if(input.toLowerCase() !== "demongod") {
 
-document.getElementById("survey1Status").innerText =
+document
+.getElementById("survey1Status")
+.innerText =
 "❌ Enter demongod.";
 
 return;
 
 }
 
-let done = localStorage.getItem(
+
+let done =
+localStorage.getItem(
 "TradeXSurvey1_" + currentEmail
 );
 
+
 if(done) {
 
-document.getElementById("survey1Status").innerText =
+document
+.getElementById("survey1Status")
+.innerText =
 "Already completed.";
 
 return;
 
 }
 
+
 xcoins += 2;
+
 
 localStorage.setItem(
 "TradeXSurvey1_" + currentEmail,
 "true"
 );
 
+
 saveUserData();
+
 updateUI();
 
-document.getElementById("survey1Status").innerText =
+
+document
+.getElementById("survey1Status")
+.innerText =
 "✅ Survey complete! +2 Xcoins";
 
 }
 
 
-/* SURVEY 3 */
+/* =========================
+   SURVEY 3
+========================= */
 
 function survey3() {
 
-let done = localStorage.getItem(
+let done =
+localStorage.getItem(
 "TradeXSurvey3_" + currentEmail
 );
 
+
 if(done) {
 
-document.getElementById("survey3Status").innerText =
+document
+.getElementById("survey3Status")
+.innerText =
 "Already claimed.";
 
 return;
 
 }
 
-let confirmClaim = confirm(
+
+let confirmed =
+confirm(
 "Did you write 'Demon God Gamerz @morbius y8' and like/comment with 'xtrade mbs'?"
 );
 
-if(!confirmClaim) return;
+
+if(!confirmed) return;
+
 
 xcoins += 4;
+
 
 localStorage.setItem(
 "TradeXSurvey3_" + currentEmail,
 "true"
 );
 
+
 saveUserData();
+
 updateUI();
 
-document.getElementById("survey3Status").innerText =
+
+document
+.getElementById("survey3Status")
+.innerText =
 "✅ Claim submitted! +4 Xcoins";
 
 }
 
 
-/* OWNER */
+/* =========================
+   OWNER VERIFICATION
+========================= */
 
 function verifyOwner() {
 
-let code = document.getElementById("ownerCode").value.trim();
+let code =
+document
+.getElementById("ownerCode")
+.value
+.trim();
+
 
 if(code !== OWNER_CODE) {
 
-document.getElementById("ownerStatus").innerText =
+document
+.getElementById("ownerStatus")
+.innerText =
 "❌ Invalid owner code.";
 
 return;
 
 }
 
+
 isOwner = true;
 
-document.getElementById("ownerStatus").innerText =
+
+/* SAVE OWNER STATUS TO CURRENT ACCOUNT */
+
+localStorage.setItem(
+"TradeXOwner_" + currentEmail,
+"true"
+);
+
+
+document
+.getElementById("ownerStatus")
+.innerText =
 "✅ Owner verified.";
 
-document.getElementById("ownerTools").style.display =
+
+document
+.getElementById("ownerTools")
+.style.display =
 "block";
+
+
+document
+.getElementById("tradePass")
+.innerText =
+"VIP O.W.N";
+
+
+loadRegisteredAccounts();
+
+}
+
+
+/* =========================
+   REGISTERED ACCOUNTS
+========================= */
+
+function loadRegisteredAccounts() {
 
 let users = [];
 
-for(let i=0;i<localStorage.length;i++) {
 
-let key = localStorage.key(i);
+for(
+let i = 0;
+i < localStorage.length;
+i++
+) {
 
-if(key.startsWith("TradeXUser_")) {
+let key =
+localStorage.key(i);
 
-users.push(key.replace("TradeXUser_",""));
+
+if(
+key &&
+key.startsWith("TradeXUser_")
+) {
+
+let email =
+key.replace(
+"TradeXUser_",
+""
+);
+
+
+let data =
+JSON.parse(
+localStorage.getItem(key)
+);
+
+
+users.push({
+
+email:email,
+
+xcoins:Number(data.xcoins ?? 0),
+
+cash:Number(data.cash ?? 0)
+
+});
 
 }
 
 }
 
-document.getElementById("registeredAccount").innerText =
-users.length ? users.join(", ") : "No registered accounts.";
+
+let container =
+document.getElementById(
+"registeredAccounts"
+);
+
+
+container.innerHTML = "";
+
+
+if(users.length === 0) {
+
+container.innerText =
+"No registered accounts.";
+
+return;
 
 }
 
 
-/* OWNER COINS */
+users.forEach(user => {
+
+let div =
+document.createElement("div");
+
+div.className =
+"owner-user";
+
+
+div.innerHTML = `
+
+<b>${escapeHTML(user.email)}</b>
+
+<br>
+
+🪙 Xcoins:
+${user.xcoins}
+
+<br>
+
+💰 Paper Cash:
+₹${user.cash.toLocaleString("en-IN")}
+
+`;
+
+container.appendChild(div);
+
+});
+
+}
+
+
+/* =========================
+   ADD XCOINS
+========================= */
 
 function addCoins() {
 
-if(!isOwner) return;
+if(!isOwner) {
+
+document.getElementById("coinStatus").innerText =
+"❌ Owner access required.";
+
+return;
+
+}
+
 
 let email =
-document.getElementById("manageEmail").value.trim();
+document
+.getElementById("manageEmail")
+.value
+.trim();
+
 
 let amount =
-Number(document.getElementById("coinAmount").value);
+Number(
+document.getElementById("coinAmount").value
+);
+
 
 if(!email || amount <= 0) {
 
 document.getElementById("coinStatus").innerText =
-"Enter valid email and amount.";
+"❌ Enter a valid email and amount.";
 
 return;
 
 }
 
+
+let key =
+"TradeXUser_" + email;
+
+
 let saved =
-localStorage.getItem("TradeXUser_" + email);
+localStorage.getItem(key);
+
 
 if(!saved) {
 
 document.getElementById("coinStatus").innerText =
-"User not found.";
+"❌ User not found.";
 
 return;
 
 }
 
-let data = JSON.parse(saved);
 
-data.xcoins += amount;
+let data =
+JSON.parse(saved);
+
+
+data.xcoins =
+Number(data.xcoins ?? 0) + amount;
+
+
+/* SAVE UPDATED BALANCE */
 
 localStorage.setItem(
-"TradeXUser_" + email,
+key,
 JSON.stringify(data)
 );
 
-document.getElementById("coinStatus").innerText =
-"✅ Xcoins added.";
+
+/* IMPORTANT FIX:
+   UPDATE CURRENT USER IF OWNER
+   IS MANAGING THEIR OWN EMAIL
+*/
+
+if(
+email.toLowerCase() ===
+currentEmail.toLowerCase()
+) {
+
+xcoins =
+data.xcoins;
+
+updateUI();
 
 }
 
+
+loadRegisteredAccounts();
+
+
+document.getElementById("coinStatus").innerText =
+"✅ " +
+amount +
+" Xcoins given. New balance: " +
+data.xcoins;
+
+}
+
+
+/* =========================
+   REMOVE XCOINS
+========================= */
 
 function removeCoins() {
 
-if(!isOwner) return;
-
-let email =
-document.getElementById("manageEmail").value.trim();
-
-let amount =
-Number(document.getElementById("coinAmount").value);
-
-let saved =
-localStorage.getItem("TradeXUser_" + email);
-
-if(!saved || amount <= 0) {
+if(!isOwner) {
 
 document.getElementById("coinStatus").innerText =
-"Invalid user or amount.";
+"❌ Owner access required.";
 
 return;
 
 }
 
-let data = JSON.parse(saved);
 
-data.xcoins =
-Math.max(0,data.xcoins - amount);
+let email =
+document
+.getElementById("manageEmail")
+.value
+.trim();
 
-localStorage.setItem(
-"TradeXUser_" + email,
-JSON.stringify(data)
+
+let amount =
+Number(
+document.getElementById("coinAmount").value
 );
 
+
+if(!email || amount <= 0) {
+
 document.getElementById("coinStatus").innerText =
-"✅ Xcoins removed.";
+"❌ Enter a valid email and amount.";
+
+return;
 
 }
 
 
-/* CHAT */
+let key =
+"TradeXUser_" + email;
+
+
+let saved =
+localStorage.getItem(key);
+
+
+if(!saved) {
+
+document.getElementById("coinStatus").innerText =
+"❌ User not found.";
+
+return;
+
+}
+
+
+let data =
+JSON.parse(saved);
+
+
+data.xcoins =
+Math.max(
+0,
+Number(data.xcoins ?? 0) - amount
+);
+
+
+localStorage.setItem(
+key,
+JSON.stringify(data)
+);
+
+
+/* IMPORTANT FIX:
+   UPDATE CURRENT USER IMMEDIATELY
+*/
+
+if(
+email.toLowerCase() ===
+currentEmail.toLowerCase()
+) {
+
+xcoins =
+data.xcoins;
+
+updateUI();
+
+}
+
+
+loadRegisteredAccounts();
+
+
+document.getElementById("coinStatus").innerText =
+"✅ " +
+amount +
+" Xcoins removed. New balance: " +
+data.xcoins;
+
+}
+
+
+/* =========================
+   CHAT FILTER
+========================= */
 
 const BAD_WORDS = [
+
 "fuck",
 "shit",
 "bitch",
 "asshole",
 "idiot"
+
 ];
+
 
 function cleanMessage(text) {
 
 let cleaned = text;
 
+
 BAD_WORDS.forEach(word => {
 
-let regex = new RegExp(
+let regex =
+new RegExp(
 "\\b" + word + "\\b",
 "gi"
 );
 
-cleaned = cleaned.replace(regex,"***");
+
+cleaned =
+cleaned.replace(
+regex,
+"***"
+);
 
 });
+
 
 return cleaned;
 
@@ -1133,52 +2000,80 @@ function containsPrivateInfo(text) {
 let emailPattern =
 /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i;
 
+
 let phonePattern =
 /(?:\+?\d[\d\s-]{8,}\d)/;
+
 
 let passwordPattern =
 /(password|passcode|otp|one[- ]time code)\s*[:=]?\s*\S+/i;
 
-return emailPattern.test(text) ||
-       phonePattern.test(text) ||
-       passwordPattern.test(text);
+
+return (
+emailPattern.test(text) ||
+phonePattern.test(text) ||
+passwordPattern.test(text)
+);
 
 }
 
+
+/* =========================
+   SEND CHAT
+========================= */
 
 function sendMessage() {
 
 let input =
 document.getElementById("chatInput");
 
-let text = input.value.trim();
+
+let text =
+input.value.trim();
+
 
 if(!text) return;
 
+
 if(containsPrivateInfo(text)) {
 
-alert("For safety, don't share phone numbers, emails, passwords or OTPs in chat.");
+alert(
+"For safety, don't share phone numbers, emails, passwords or OTPs in chat."
+);
 
 return;
 
 }
 
-text = cleanMessage(text);
+
+text =
+cleanMessage(text);
+
 
 let messages =
-JSON.parse(localStorage.getItem("TradeXChat") || "[]");
+JSON.parse(
+localStorage.getItem("TradeXChat") || "[]"
+);
+
 
 messages.push({
+
 email:currentEmail,
+
 text:text,
+
 time:Date.now(),
+
 pinned:false
+
 });
+
 
 localStorage.setItem(
 "TradeXChat",
 JSON.stringify(messages)
 );
+
 
 input.value = "";
 
@@ -1187,51 +2082,96 @@ loadChat();
 }
 
 
+/* =========================
+   LOAD CHAT
+========================= */
+
 function loadChat() {
 
 let box =
 document.getElementById("chatBox");
 
+
 if(!box) return;
 
+
 let messages =
-JSON.parse(localStorage.getItem("TradeXChat") || "[]");
-
-let now = Date.now();
-
-messages = messages.filter(m =>
-    m.pinned || now - m.time < 12 * 60 * 1000
+JSON.parse(
+localStorage.getItem("TradeXChat") || "[]"
 );
+
+
+let now =
+Date.now();
+
+
+messages =
+messages.filter(m =>
+m.pinned ||
+now - m.time < 12 * 60 * 1000
+);
+
 
 localStorage.setItem(
 "TradeXChat",
 JSON.stringify(messages)
 );
 
+
 box.innerHTML = "";
+
 
 messages.forEach((m,index) => {
 
-let div = document.createElement("div");
-div.className = "message";
+let div =
+document.createElement("div");
+
+
+div.className =
+"message";
+
 
 let pinButton = "";
 
-if(m.pinned || isOwner) {
 
-pinButton =
-`<button onclick="togglePin(${index})">
-${m.pinned ? "📌 Unpin" : "📌 Pin"}
-</button>`;
+if(isOwner) {
+
+pinButton = `
+
+<br>
+
+<button
+class="action"
+onclick="togglePin(${index})"
+>
+
+${m.pinned ? "Unpin" : "Pin"}
+
+</button>
+
+`;
 
 }
 
+
 div.innerHTML = `
-<b>${escapeHTML(m.email)}</b>
-<small> ${new Date(m.time).toLocaleTimeString()}</small>
-<p>${escapeHTML(m.text)}</p>
+
+<b>
+${escapeHTML(m.email)}
+</b>
+
+<small>
+${new Date(m.time).toLocaleTimeString()}
+</small>
+
+<p>
+${escapeHTML(m.text)}
+</p>
+
 ${pinButton}
+
 `;
+
 
 box.appendChild(div);
 
@@ -1240,22 +2180,32 @@ box.appendChild(div);
 }
 
 
+/* =========================
+   PIN CHAT
+========================= */
+
 function togglePin(index) {
 
 if(!isOwner) return;
 
+
 let messages =
-JSON.parse(localStorage.getItem("TradeXChat") || "[]");
+JSON.parse(
+localStorage.getItem("TradeXChat") || "[]"
+);
+
 
 if(messages[index]) {
 
 messages[index].pinned =
 !messages[index].pinned;
 
+
 localStorage.setItem(
 "TradeXChat",
 JSON.stringify(messages)
 );
+
 
 loadChat();
 
@@ -1264,39 +2214,61 @@ loadChat();
 }
 
 
+/* =========================
+   HTML SAFETY
+========================= */
+
 function escapeHTML(text) {
 
-let div = document.createElement("div");
-div.textContent = text;
+let div =
+document.createElement("div");
+
+
+div.textContent =
+text;
+
 
 return div.innerHTML;
 
 }
 
 
-/* LOGOUT */
+/* =========================
+   LOGOUT
+========================= */
 
 function logout() {
 
 saveUserData();
 
+
 currentEmail = "";
+
 isOwner = false;
+
 
 document.getElementById("app").style.display =
 "none";
 
+
 document.getElementById("login").style.display =
 "flex";
 
-document.getElementById("email").value = "";
+
+document.getElementById("email").value =
+"";
 
 }
 
 
-/* CHAT EXPIRATION CHECK */
+/* =========================
+   CHAT EXPIRATION
+========================= */
 
-setInterval(loadChat,30000);
+setInterval(
+loadChat,
+30000
+);
 
 </script>
 
